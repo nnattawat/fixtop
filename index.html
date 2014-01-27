@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  	<script src="jquery.fixtop.js"></script>
+    <title>jQuery plugin</title>
+    <style type="text/css">
+      .bar{
+        text-align: center;
+        margin-bottom: 10px;
+        background-color: #f5f5f5;
+        padding: 5px;
+        border: 1px solid #ddd;
+        -webkit-transition: opacity 0.3s;
+        -webkit-transition: background-color 0.3s;
+      }
+      .fake{
+        height: 500px;
+        background: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fake"></div>
+    <div class="fake"></div>
+    <div class="bar" id="myBar">
+      My fixed bar
+    </div>
+    <div class="fake"></div>
+    <div class="fake"></div>
+    <script type="text/javascript">
+    	$(function(){
+        $("#myBar").fixtop({
+          marginTop: 10,
+          afterFix: function(el){
+            el.css({
+              "opacity": 0.7,
+              "background-color": "#5c5c5c"
+            });
+          },
+          afterUnfix: function(el){
+            el.css({
+              "opacity": 1,
+              "background-color": "#f5f5f5"
+            });
+          }
+        });
+    	});
+    </script>
+  </body>
+</html>
