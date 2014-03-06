@@ -1,6 +1,6 @@
 /*!
  * jQuery Fix Top v1.0
- * https://github.com/armmer1/fixtop
+ * https://github.com/nnattawat/fixtop
  *
  * Copyright 2014, Nattawat Nonsung
  */
@@ -33,8 +33,8 @@
 	      	'z-index': settings.zIndex, 
 	      	'width': el.width()+'px' 
 	      }); 
-	      if(settings.afterFix !== undefined){
-	      	settings.afterFix(el);
+	      if(settings.fixed !== undefined){
+	      	settings.fixed(el);
 	      }
 	    } 
 	    if ($(this).scrollTop() < y && el.css('position') == 'fixed'){
@@ -43,8 +43,8 @@
 	     		'top': '0px',
 	     		'z-index': settings.zIndex 
 	     	});
-	     	if(settings.afterUnfix !== undefined){
-	      	settings.afterUnfix(el);
+	     	if(settings.unfixed !== undefined){
+	      	settings.unfixed(el);
 	     	}
 	    }
 	  });
