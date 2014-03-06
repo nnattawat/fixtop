@@ -15,3 +15,11 @@
 .jumbotron{
 	margin-bottom: 0px;
 }
+
+footer{
+	padding: 30px;
+	margin-top: 30px;
+	background-color: #eee;
+	color: #333;
+	border-top: 1px #ccc solid;
+}
