@@ -5,17 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery - Fixtop</title>
-
-    <!-- Bootstrap -->
     <link href="asset/css/bootstrap.min.css" rel="stylesheet">
     <link href="asset/css/index.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div class="jumbotron">
@@ -24,7 +16,7 @@
         <p>A jQuery plugin to fix DOM element to the top when a page scrolls to its position. <strong><span class="text-info">See the bar below for an example.</span></strong></p>
       </div>
     </div>
-    <div class="menu-bar">
+    <div class="menu-bar" id="fixtop">
       <a href="https://github.com/nnattawat/fixtop/zipball/master" class="btn btn-primary">Download .zip</a>
       <a href="https://github.com/nnattawat/fixtop/tarball/master" class="btn btn-primary">Download .tar</a>
       <a href="https://github.com/nnattawat/fixtop" class="btn btn-default">View on Github</a>
@@ -35,12 +27,73 @@
       <pre>&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.fixtop.js"&gt;</pre>
 
       <h3>How to use</h3>
-      <p>Create an <code>&lt;div&gt;</code> element in a HTML file</p>
+      <p>Create a <code>&lt;div&gt;</code> element in a HTML file</p>
       <pre>&lt;div id='fixtop'&gt;&lt;/div&gt;</pre>
+      <p>Then, call the jQuery <code>fixtop()</code> method in JS</p>
+      <pre>$('#fixtop').fixtop();</pre>
+
+      <h3>Options</h3>
+      <table class="table table-bordered">
+        <thead>
+          <th>Attribute</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>marginTop</td>
+            <td><code>integer</code></td>
+            <td>0</td>
+            <td>Margin top of the fixed-top element, applied once it is fixed to the top of a page</td>
+          </tr>
+          <tr>
+            <td>zIndex</td>
+            <td><code>integer</code></td>
+            <td>1000</td>
+            <td>z-index of the fixed-top element, applied once it is fixed to the top of a page</td>
+          </tr>
+          <tr>
+            <td>fixed</td>
+            <td><code>function()</code></td>
+            <td>-</td>
+            <td>Fuction that will be called after the element become fixed. It receive a jQeury object of the fixed-top element as a parameter</td>
+          </tr>
+          <tr>
+            <td>unfixed</td>
+            <td><code>function()</code></td>
+            <td>-</td>
+            <td>Fuction that will be called after the element become normal. Use mostly for reverting fixed fuction()</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>For example, you can set options as:</p>
+      <pre>
+$("#fixtop").fixtop({
+  marginTop: 10,
+  zIndex: 2000,
+  fixed: function(el){
+    el.addClass("barChanged");
+  },
+  unfixed: function(el){
+    el.removeClass("barChanged");
+  },
+});</pre>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="asset/js/jquery-1.10.2.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="asset/js/bootstrap.min.js"></script>
+    <script src="asset/js/jquery.fixtop.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $("#fixtop").fixtop({
+          fixed: function(el){
+            el.addClass("menu-bar-changed");
+          },
+          unfixed: function(el){
+            el.removeClass("menu-bar-changed");
+          },
+        });
+      });
+    </script>
   </body>
 </html>
