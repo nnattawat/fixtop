@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>jQuery - Fixtop</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/index.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,11 +18,29 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Fixtop</h2>
+        <p>A jQuery plugin to fix DOM element to the top when a page scrolls to its position. <strong><span class="text-info">See the bar below for an example.</span></strong></p>
+      </div>
+    </div>
+    <div class="menu-bar">
+      <a href="https://github.com/nnattawat/fixtop/zipball/master" class="btn btn-primary">Download .zip</a>
+      <a href="https://github.com/nnattawat/fixtop/tarball/master" class="btn btn-primary">Download .tar</a>
+      <a href="https://github.com/nnattawat/fixtop" class="btn btn-default">View on Github</a>
+    </div>
+    <div class="container">
+      <h3>How to include</h3>
+      <p>Simply include jquery.js and jquery.fixtop.js you have downloaded.</p>
+      <pre>&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.fixtop.js"&gt;</pre>
 
+      <h3>How to use</h3>
+      <p>Create an <code>&lt;div&gt;</code> element in a HTML file</p>
+      <pre>&lt;div id='fixtop'&gt;&lt;/div&gt;</pre>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="asset/js/jquery-1.10.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
   </body>
 </html>
