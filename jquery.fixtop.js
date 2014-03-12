@@ -17,7 +17,8 @@
 		// Define default setting
 		var settings = $.extend({
 			marginTop: 0,
-			zIndex: 1000
+			zIndex: 1000,
+			fixedWidth: "100%"
     }, options );
 
 		var form_top = this.offset().top - settings.marginTop;
@@ -40,7 +41,7 @@
 	      	'position': 'fixed', 
 	      	'top': settings.marginTop+'px',
 	      	'z-index': settings.zIndex, 
-	      	'width': "100%" 
+	      	'width': settings.fixedWidth
 	      }); 
 	      if(settings.fixed !== undefined){
 	      	settings.fixed(el);
