@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery - Fixtop</title>
     <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/prettify.css" rel="stylesheet">
     <link href="asset/css/index.css" rel="stylesheet">
 
   </head>
@@ -25,13 +26,13 @@
     <div class="container">
       <h3>How to include</h3>
       <p>Simply include jquery.js and jquery.fixtop.js you have downloaded.</p>
-      <pre>&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.fixtop.js"&gt;</pre>
+      <pre class="prettyprint">&lt;script src="http://code.jquery.com/jquery-[latest].min.js"&gt;<br/>&lt;script src="jquery.fixtop.js"&gt;</pre>
 
       <h3>How to use</h3>
       <p>Create a <code>&lt;div&gt;</code> element in a HTML file</p>
-      <pre>&lt;div id='fixtop'&gt;&lt;/div&gt;</pre>
+      <pre class="prettyprint">&lt;div id='fixtop'&gt;&lt;/div&gt;</pre>
       <p>Then, call the jQuery <code>fixtop()</code> method in JS</p>
-      <pre>$('#fixtop').fixtop();</pre>
+      <pre class="prettyprint">$('#fixtop').fixtop();</pre>
 
       <h3>Options</h3>
       <table class="table table-bordered">
@@ -75,7 +76,7 @@
         </tbody>
       </table>
       <p>For example, you can set options as:</p>
-      <pre>
+      <pre class="prettyprint">
 $("#fixtop").fixtop({
   marginTop: 10,
   zIndex: 2000,
@@ -95,8 +96,10 @@ $("#fixtop").fixtop({
     <script src="asset/js/jquery-1.10.2.min.js"></script>
     <script src="asset/js/bootstrap.min.js"></script>
     <script src="asset/js/jquery.fixtop.js"></script>
+    <script src="asset/js/prettify.js"></script>
     <script type="text/javascript">
       $(function(){
+        prettyPrint();
         $("#fixtop").fixtop({
           fixed: function(el){
             el.addClass("menu-bar-changed");
